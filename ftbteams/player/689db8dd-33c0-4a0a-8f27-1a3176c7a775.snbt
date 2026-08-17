@@ -1,0 +1,19 @@
+{
+	id: "689db8dd-33c0-4a0a-8f27-1a3176c7a775"
+	type: "player"
+	player_name: "mateo12356"
+	ranks: {
+		689db8dd-33c0-4a0a-8f27-1a3176c7a775: "owner"
+	}
+	properties: {
+		"ftbteams:display_name": "mateo12356"
+		"ftbteams:color": "#5993FF"
+		"ftbchunks:block_edit_mode": "allies"
+		"ftbchunks:block_interact_mode": "allies"
+		"ftbteams:description": ""
+		"ftbteams:free_to_join": 0b
+		"ftbchunks:allow_fake_players": 1b
+	}
+	message_history: [ ]
+	extra: { }
+}
