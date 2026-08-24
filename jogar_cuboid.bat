@@ -1,5 +1,5 @@
 @echo off
-:: Script de Sincronizacao Auto-Sustentavel - Cuboid Outpost (PUC)
+:: Script de Sincronizacao Auto-Sustentavel com Auto-Launch - Cuboid Outpost
 chcp 65001 > nul
 setlocal enabledelayedexpansion
 
@@ -10,13 +10,14 @@ cmd /c "ipconfig /flushdns && del /q /f /s "%TEMP%\*" 2>nul"
 :: CONFIGURAÇÕES REAIS (DIRETÓRIOS E GITHUB)
 :: ==========================================
 set "REPO_URL=https://github.com/logoali231-droid/cuboided"
-set "PRISM_LNK=C:\Users\mateo.somavilla\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Prism Launcher.lnk"
 set "MINECRAFT_DIR=C:\Users\mateo.somavilla\AppData\Roaming\PrismLauncher\instances\Cuboid Outpost\minecraft"
+set "SAVES_DIR=%MINECRAFT_DIR%\saves\cuboided"
 
-:: Pasta correta do mundo para os arquivos crus do repositório
-set "SAVES_DIR=%MINECRAFT_DIR%\saves\Mundo_Cuboid"
+:: Tenta localizar o executavel real do Prism Launcher para aplicar o comando de Auto-Launch
+set "PRISM_EXE=C:\Program Files\Prism Launcher\prismlauncher.exe"
+if not exist "%PRISM_EXE%" set "PRISM_EXE=%LOCALAPPDATA%\PrismLauncher\prismlauncher.exe"
+if not exist "%PRISM_EXE%" set "PRISM_EXE=%APPDATA%\PrismLauncher\prismlauncher.exe"
 
-:: Criar a arvore de pastas caso nao exista
 if not exist "%SAVES_DIR%" mkdir "%SAVES_DIR%"
 
 :: ==========================================
@@ -40,38 +41,60 @@ if not exist ".git" (
 )
 
 :: ==========================================
-:: INICIALIZAÇÃO DO MINECRAFT
+:: INICIALIZAÇÃO TOTALMENTE AUTOMÁTICA
 :: ==========================================
 echo.
 echo =======================================================
-echo [JOGO] ABRINDO O PRISM LAUNCHER
+echo [JOGO] INICIANDO O CUBOID OUTPOST AUTOMATICAMENTE
 echo =======================================================
-echo [AVISO] O terminal ficara travado aguardando o fechamento do jogo.
-echo Nao feche esta janela preta manualmente!
-echo =======================================================
-start "" /wait "%PRISM_LNK%"
+echo [INFO] Disparando o jogo pelo motor do Prism Launcher...
 
+if exist "%PRISM_EXE%" (
+    start "" "%PRISM_EXE%" --launch "Cuboid Outpost"
+) else (
+    start "" "C:\Users\mateo.somavilla\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Prism Launcher.lnk" --launch "Cuboid Outpost"
+)
+
+echo [AGUARDANDO] Monitorando a inicializacao do Java...
+
+:: Loop de espera: Aguarda o processo javaw.exe (Minecraft) iniciar
+:esperar_jogo
+timeout /t 2 /nobreak >nul
+tasklist /fi "imagename eq javaw.exe" 2>nul | find /i "javaw.exe" >nul
+if errorlevel 1 (
+    goto esperar_jogo
+)
+
+echo [DETECTADO] Cuboid Outpost aberto com sucesso!
+echo [INFO] O terminal ficara travado monitorando o jogo. Pode jogar em paz.
+
+:: Loop de travamento corrigido: Fica aqui ate o javaw.exe fechar de verdade (Retornar Errorlevel 1)
+:jogo_rodando
+timeout /t 5 /nobreak >nul
+tasklist /fi "imagename eq javaw.exe" 2>nul | find /i "javaw.exe" >nul
+if errorlevel 1 (
+    goto fechar_e_salvar
+)
+goto jogo_rodando
+
+:fechar_e_salvar
 :: ==========================================
 :: FLUXO GITHUB: PÓS-JOGO (PUSH + AUTO-SCRIPT)
 :: ==========================================
 echo.
 echo =======================================================
-echo [GITHUB] JOGO FECHADO! ENVIANDO BACKUP AUTOMATICO...
+echo [GITHUB] MINECRAFT FECHADO! ENVIANDO BACKUP AUTOMATICO...
 echo =======================================================
 cd /d "%SAVES_DIR%"
 
-:: Garante a branch correta do seu repositorio
 git checkout main
 
-:: Remove o arquivo de trava do Minecraft para nao dar conflito no Git
 if exist "session.lock" del /q /f "session.lock"
 
-:: [NOVO] Faz o script copiar a si mesmo para a raiz do repositório antes de enviar
 copy /y "%~f0" "%SAVES_DIR%\jogar_cuboid.bat" > nul
 
-:: Adiciona as alteracoes e envia o save + o script para o GitHub
 git add .
-git commit -m "Backup automatico (Save + Script): %date% %time%"
+git commit -m "Backup automatico (Save + Script Direto): %date% %time%"
 git push origin main -f
 
 echo.
