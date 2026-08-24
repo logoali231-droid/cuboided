@@ -1787,6 +1787,12 @@
     },
     "done": true
   },
+  "tombstone:adventure/find_grave_dust": {
+    "criteria": {
+      "from_undead": "2026-08-24 13:21:14 -0300"
+    },
+    "done": false
+  },
   "immersiveengineering:recipes/immersiveengineering/crafting/nugget_aluminum_recycle_faraday_chest": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:00 -0300"
@@ -2006,6 +2012,12 @@
   "immersiveengineering:recipes/immersiveengineering/crafting/sheetmetal_copper_from_slab": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:03 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/mine_stone": {
+    "criteria": {
+      "get_stone": "2026-08-24 13:20:16 -0300"
     },
     "done": true
   },
@@ -2861,6 +2873,12 @@
     },
     "done": true
   },
+  "mcwroofs:recipes/andesite": {
+    "criteria": {
+      "has_planks": "2026-08-24 13:20:12 -0300"
+    },
+    "done": true
+  },
   "immersiveengineering:recipes/immersiveengineering/crafting/storage_steel_from_slab": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:03 -0300"
@@ -3685,7 +3703,8 @@
   },
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
-      "minecraft:skeleton": "2026-08-18 14:12:04 -0300"
+      "minecraft:skeleton": "2026-08-18 14:12:04 -0300",
+      "minecraft:zombie": "2026-08-24 14:10:17 -0300"
     },
     "done": false
   },
@@ -7193,6 +7212,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/tools/stone_pickaxe": {
+    "criteria": {
+      "has_cobblestone": "2026-08-24 13:20:16 -0300"
+    },
+    "done": true
+  },
   "cuboidmod:recipes/cuboidmod/wikidium_chest_from_ingots": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:02 -0300"
@@ -10349,6 +10374,12 @@
     },
     "done": true
   },
+  "tombstone:recipes/from_grave_dust": {
+    "criteria": {
+      "has_ingredient": "2026-08-24 13:21:14 -0300"
+    },
+    "done": true
+  },
   "immersiveengineering:recipes/immersiveengineering/crafting/ingot_silver_from_blasting": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:03 -0300"
@@ -11624,6 +11655,12 @@
   "cfm:recipes/cfm/spatula": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:03 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/stone_shovel": {
+    "criteria": {
+      "has_cobblestone": "2026-08-24 13:20:16 -0300"
     },
     "done": true
   },
@@ -13007,6 +13044,12 @@
     },
     "done": true
   },
+  "create:andesite_alloy": {
+    "criteria": {
+      "0": "2026-08-24 14:37:04 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/redstone/acacia_pressure_plate": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:05 -0300"
@@ -13319,6 +13362,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/combat/stone_sword": {
+    "criteria": {
+      "has_cobblestone": "2026-08-24 13:20:16 -0300"
+    },
+    "done": true
+  },
   "create:recipes/create.palettes/fancy_dolomite_bricks_wall_from_fancy_dolomite_bricks_stonecutting": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:03 -0300"
@@ -13562,6 +13611,12 @@
   "exnihilosequentia:recipes/exnihilosequentia/ens_ingot_lead": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:04:59 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/stone_axe": {
+    "criteria": {
+      "has_cobblestone": "2026-08-24 13:20:16 -0300"
     },
     "done": true
   },
@@ -14288,6 +14343,12 @@
   "tconstruct:recipes/tconstruct/general/common/slime/blood/slimeball_from_congealed": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:00 -0300"
+    },
+    "done": true
+  },
+  "mcwroofs:recipes/granite": {
+    "criteria": {
+      "has_planks": "2026-08-24 13:20:26 -0300"
     },
     "done": true
   },
@@ -17330,6 +17391,12 @@
   "cfm:recipes/cfm/dye_orange_picket_fence": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:04 -0300"
+    },
+    "done": true
+  },
+  "mcwroofs:recipes/diorite": {
+    "criteria": {
+      "has_planks": "2026-08-24 13:20:29 -0300"
     },
     "done": true
   },
@@ -23214,6 +23281,12 @@
   "cuboidmod:recipes/cuboidmod/notsogudium_furnace_upgrade_with_four_ingots": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:04 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/stone_hoe": {
+    "criteria": {
+      "has_cobblestone": "2026-08-24 13:20:16 -0300"
     },
     "done": true
   },
