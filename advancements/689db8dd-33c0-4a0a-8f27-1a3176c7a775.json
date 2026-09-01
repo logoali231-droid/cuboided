@@ -2267,6 +2267,12 @@
     },
     "done": true
   },
+  "create:goggles": {
+    "criteria": {
+      "0": "2026-09-01 09:47:48 -0300"
+    },
+    "done": true
+  },
   "cfm:recipes/cfm/purple_sofa": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:02 -0300"
@@ -6645,6 +6651,12 @@
   "refinedstorage:recipes/refinedstorage/coloring_recipes/magenta_pattern_grid": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:01 -0300"
+    },
+    "done": true
+  },
+  "mcwroofs:recipes/sandstone": {
+    "criteria": {
+      "has_planks": "2026-09-01 09:19:07 -0300"
     },
     "done": true
   },
@@ -14172,6 +14184,12 @@
     },
     "done": true
   },
+  "create:andesite_casing": {
+    "criteria": {
+      "0": "2026-09-01 09:43:26 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/green_stained_glass_pane": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:05 -0300"
@@ -15501,6 +15519,12 @@
   "minecraft:recipes/building_blocks/stripped_birch_wood": {
     "criteria": {
       "has_the_recipe": "2026-08-17 10:05:03 -0300"
+    },
+    "done": true
+  },
+  "create:wrench": {
+    "criteria": {
+      "0": "2026-09-01 09:47:23 -0300"
     },
     "done": true
   },
@@ -22973,6 +22997,7 @@
       "bread": "2026-08-18 14:06:05 -0300",
       "rotten_flesh": "2026-08-17 12:03:57 -0300",
       "salmon": "2026-08-17 15:03:01 -0300",
+      "dried_kelp": "2026-09-01 09:31:52 -0300",
       "cod": "2026-08-18 13:21:45 -0300",
       "cooked_salmon": "2026-08-17 15:08:30 -0300"
     },
