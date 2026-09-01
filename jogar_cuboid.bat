@@ -124,4 +124,3 @@ echo [OK] O computador da PUC ja pode resetar em paz.
 echo =======================================================
 pause
 exit /b
-
